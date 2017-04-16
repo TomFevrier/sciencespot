@@ -1,10 +1,10 @@
 # SCIENCE/SPOT
 
-##L'indicateur du logement sciences-piste idéal
+## L'indicateur du logement sciences-piste idéal
 
 ***Réalisé par Gilles COLLOMBET-GOURDON & Tom FÉVRIER***
 
-###Organisation du code source
+### Organisation du code source
 - *index.html*
 - *CSVParsing.js* :
   - lit les fichiers CSV situés dans le dossier éponyme
