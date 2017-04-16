@@ -2,6 +2,8 @@ var max, min, range;
 var firstValidated = false;
 
 function initMap() {
+    
+    console.log("Bravo, tu as trouvé le message caché ! Tu peux être fier de toi.");
 
     var map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 48.858217, lng: 2.348886},
