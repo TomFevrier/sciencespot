@@ -29,7 +29,7 @@ function initMap() {
 
         if ((tab[quartier-1] == max) && (firstValidated)) {
             quartierIdeal.innerHTML = feature.getProperty('l_qu');
-            var infos = "<div id='index' style='color:" + getColor(tab[quartier - 1]) + ";'><p>" + tab[quartier - 1] + "</p></div>";
+            var infos = "<div id='index' style='color:" + getColor(tab[quartier - 1]) + "; margin-bottom: -2vh;'><p>" + tab[quartier - 1] + "</p></div>";
             infos += "<div id='details'><div class='domain'><p><img src='media/coutDeLaVie.png'/><b>Coût de la vie :</b>&nbsp&nbsp" + notation(dataCoutDeLaVie, quartier) + "</p></div>";
             infos += "<div class='domain'><p><img src='media/transport.png'/><b>Transport :</b>&nbsp&nbsp" + notation(dataTransport, quartier) + "</p></div>";
             infos += "<div class='domain'><p><img src='media/cadreDeVie.png'/><b>Cadre de vie :</b>&nbsp&nbsp" + notation(dataCadreDeVie, quartier) + "</p></div>";
