@@ -1,5 +1,6 @@
-# SCIENCE/SPOT : L'indicateur du logement sciences-piste idéal
-# Réalisé par Gilles COLLOMBET-GOURDON & Tom FÉVRIER
+# SCIENCE/SPOT
+**L'indicateur du logement sciences-piste idéal**
+***Réalisé par Gilles COLLOMBET-GOURDON & Tom FÉVRIER***
 
 **Organisation du code source**
 - *index.html*
