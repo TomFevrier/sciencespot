@@ -93,16 +93,16 @@ function getColor(value) {
         color = "Maroon";
     }
     else if (value < min + 3*range) {
-        color = "DarkRed";
+        color = "FireBrick";
     }
     else if (value < min + 4*range) {
-        color = "FireBrick";
+        color = "Red";
     }
     else if (value < min +5*range) {
         color = "Tomato";
     }
     else if (value < min + 6*range) {
-        color = "OrangeRed";
+        color = "Orange";
     }
     else if (value < min + 7*range) {
         color = "Gold";
@@ -116,6 +116,7 @@ function getColor(value) {
     else {
         color = "Green";
     }
+    
     return color;
 }
 
