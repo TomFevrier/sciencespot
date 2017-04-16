@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Application</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="stylesheet" href="/libraries/powerange.css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Work+Sans:900" rel="stylesheet">
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="CSVParsing.js"></script>
+        <script type="text/javascript" src="map.js"></script>
+        <script type="text/javascript" src="sidebar.js"></script>
+        <script src="/libraries/smooth-scroll.js"></script>
+        <script>
+            smoothScroll.init({speed: 1500});
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJDvuny3q2sl3IhKzqN2o6Ctja9AWfGzc" async defer></script>
+    </head>
+    <body onload='initMap()'>
+        <header>
+            <h1>SCIENCE/SPOT</h1>
+            <h2>Indicateur du logement sciences-piste idéal</h2>
+            <p>Découvre ton quartier idéal selon tes propres critères</p>
+            <div id='domains'>
+                <div class='domain-with-name'>
+                    <img src='media/coutDeLaVie.png' style='width: 5vmin; height: 5vmin; align: center;'/>
+                    <p>Coût de la vie</p>
+                </div>
+                <div class='domain-with-name'>
+                    <img src='media/transport.png' style='width: 5vmin; height: 5vmin; align: center;'/>
+                    <p>Transport</p>
+                </div>
+                <div class='domain-with-name'>
+                    <img src='media/cadreDeVie.png' style='width: 5vmin; height: 5vmin; align: center;'/>
+                    <p>Cadre de vie</p>
+                </div>
+                <div class='domain-with-name'>
+                    <img src='media/sorties.png' style='width: 5vmin; height: 5vmin; align: center;'/>
+                    <p>Sorties</p>
+                </div>
+                <div class='domain-with-name'>
+                    <img src='media/culture.png' style='width: 5vmin; height: 5vmin; align: center;'/>
+                    <p>Culture</p>
+                </div>
+            </div>
+            <a data-scroll id='toInterface' href="#interface"><p align="center"><img src="media/arrow.png"></p><a>
+        </header>
+        <div id='interface'>
+            <div id="map"></div>
+            <div id='sidebar'>
+                <div id='instruction'>Note les différents critères en fonction de l'importance que tu y accordes</div>
+                <div class='slider-wrapper'>
+    				<input type="text" id="coutDeLaVie" />
+                </div>
+                <div class='slider-wrapper'>
+                    <input type="text" id="transport" />
+                </div>
+                <div class='slider-wrapper'>
+                    <input type="text" id="cadreDeVie" />
+                </div>
+                <div class='slider-wrapper'>
+                    <input type="text" id="sorties" />
+                </div>
+                <div class='slider-wrapper'>
+                    <input type="text" id="culture" />
+                </div>
+                <section class='viewMap'>
+                    <button id='viewMap'>VALIDER</button>
+                </section>
+                <div id='info'>
+                    <p>Ton quartier idéal est...<p>
+                    <div id='quartierIdeal'></div>
+                    <div id='infosIdeal'>Sélectionne tes critères pour le savoir !</div>
+                </div>
+                <div id='linkCommentCaMarche'></div>
+            </div>
+        </div>
+
+
+        <div id='credits'>
+            <div id='columns'>
+                <div id='details-index'>
+                    <h2>Le détail</h2>
+                    <img src='media/coutDeLaVie.png' style='width: 5vmin; height: 5vmin; align: center; margin-top: 3.5vmin; margin-bottom:0n;'/>
+                    <p>Niveau moyen des loyers par quartier pour un logement étudiant type&nbsp;&nbsp;&nbsp;<b>70 %</b></p>
+                    <p>Prix du panier moyen par arrondissement&nbsp;&nbsp;&nbsp;<b>30 %</b></p>
+                    <img src='media/transport.png' style='width: 5vmin; height: 5vmin; align: center; margin-top: 3.5vmin; margin-bottom:-0;'/>
+                    <p>Nombre de stations de Vélib par quartier&nbsp;&nbsp;&nbsp;<b>? %</b></p>
+                    <p>Temps de trajet en transports en commun entre chaque quartier et Sciences Po&nbsp;&nbsp;&nbsp;<b>? %</b></p>
+                    <img src='media/cadreDeVie.png' style='width: 5vmin; height: 5vmin; align: center; margin-top: 3.5vmin; margin-bottom:-0;'/>
+                    <p>Proportion d'espaces verts par arrondissement&nbsp;&nbsp;&nbsp;<b>50 %</b></p>
+                    <p>Proportion de vols et de violences crapuleuses par arrondissement&nbsp;&nbsp;&nbsp;<b>50 %</b></p>
+                    <img src='media/sorties.png' style='width: 5vmin; height: 5vmin; align: center; margin-top: 3.5vmin; margin-bottom:-0;'/>
+                    <p>Prix moyen de la pinte de bière par quartier&nbsp;&nbsp;&nbsp;<b>50 %</b></p>
+                    <p>Nombre de soirées sciences-pistes ayant eu lieu par quartier&nbsp;&nbsp;&nbsp;<b>50 %</b></p>
+                    <img src='media/culture.png' style='width: 5vmin; height: 5vmin; align: center; margin-top: 3.5vmin; margin-bottom:-0;'/>
+                    <p>Nombre de cinémas par quartier &nbsp;&nbsp;&nbsp;<b>50 %</b></p>
+                    <p>Nombre de musées par quartier&nbsp;&nbsp;&nbsp;<b>50 %</b></p>
+                </div>
+                <!--<div id='commentCaMarche'>
+                    <h2>Comment ça marche</h2>
+                    <div id='copyright'>
+                        <p>© Réalisé par Gilles COLLOMBET-GOURDON & Tom FÉVRIER - 2017</p>
+                    </div>
+                </div>-->
+                <div id='sources'>
+                    <h2>Sources des données</h2>
+                    <img src='media/coutDeLaVie.png' style='width: 5vmin; height: 5vmin; align: center; margin-top: 3.5vmin; margin-bottom:-1.2vmin;'/>
+                    <a href='http://www.referenceloyer.drihl.ile-de-france.developpement-durable.gouv.fr' target='_blank' class='source'>
+                        <p style='margin-top:2vmin'>L'encadrement des loyers à Paris</p>
+                        <p>Ministère du Logement et de l'Habitat Durable</p>
+                    </a>
+                    <a href='https://www.quechoisir.org/carte-interactive-drives-n21243/' target='_blank' class='source'>
+                        <p style='margin-top:2vmin'>Palmarès des supermarchés parisiens</p>
+                        <p>UFC Que Choisir</p>
+                    </a>
+                    <img src='media/transport.png' style='width: 5vmin; height: 5vmin; align: center; margin-top: 3.5vmin; margin-bottom:-1.2vmin;'/>
+                    <a href='https://opendata.paris.fr/explore/dataset/stations-velib-disponibilites-en-temps-reel' target='_blank' class='source'>
+                        <p style='margin-top:2vmin'>Stations Vélib</p>
+                        <p>Mairie de Paris <i>(licence OBbL)</i></p>
+                    </a>
+                    <a href='https://developers.google.com/maps/documentation/distance-matrix/?hl=fr' target='_blank' class='source'>
+                        <p style='margin-top:2vmin'>Temps de trajet en transports en commun</p>
+                        <p>Google Maps Distance Matrix API</p>
+                    </a>
+                    <img src='media/cadreDeVie.png' style='width: 5vmin; height: 5vmin; align: center; margin-top: 3.5vmin; margin-bottom:-1.2vmin;'/>
+                    <a href='https://fr.wikipedia.org/wiki/Liste_des_espaces_verts_de_Paris' target='_blank' class='source'>
+                        <p style='margin-top:2vmin'>Liste des espaces verts de Paris</p>
+                        <p>Wikipédia (à partir des données de l'Institut d'Aménagement et d'Urbanisme de l'Île-de-France)</p>
+                    </a>
+
+                    <a href='https://www.inhesj.fr/sites/default/files/fichiers_site/ondrp_ra-2016/2016_ra_cd_paris.pdf' target='_blank' class='source'>
+                        <p style='margin-top:2vmin'>Crimes et délits commis dans les communes du Grand Paris en 2015</p>
+                        <p>Observatoire National de la Délinquance et des Réponses Pénales</p>
+                    </a>
+                    <img src='media/sorties.png' style='width: 5vmin; height: 5vmin; align: center; margin-top: 3.5vmin; margin-bottom:-1.2vmin;'/>
+                    <a href='http://www.mistergoodbeer.com/' target='_blank' class='source'>
+                        <p style='margin-top:2vmin'>Prix de la pinte de bière à Paris</p>
+                        <p>MisterGoodBeer</p>
+                    </a>
+                    <a href='http://www.bdesciencespo.fr/le-calendrier-des-assos' target='_blank' class='source'>
+                        <p style='margin-top:2vmin'>Calendrier inter-associations</p>
+                        <p>BDE Sciences Po</p>
+                    </a>
+                    <img src='media/culture.png' style='width: 5vmin; height: 5vmin; align: center; margin-top: 3.5vmin; margin-bottom:-1.2vmin;'/>
+                    <a href='https://opendata.paris.fr/explore/dataset/cinemas-a-paris/' target='_blank' class='source'>
+                        <p style='margin-top:2vmin'>Cinémas à Paris</p>
+                        <p>Mairie de Paris <i>(licence OBdL)</i></p>
+                    </a>
+                    <a href='https://data.iledefrance.fr/explore/dataset/liste_des_musees_franciliens/' target='_blank' class='source'>
+                        <p>Musées franciliens</p>
+                        <p>Région Île-de-France <i>(licence ouverte)</i></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    	<script src="/libraries/powerange.js"></script>
+        <script src="sliders.js"></script>
+    </body>
+</html>
