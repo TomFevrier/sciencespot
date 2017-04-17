@@ -19,7 +19,7 @@
 - *main.css* :
   - gère l'ensemble des styles du site
   
-### Dossiers :
+### Dossiers
 - *media* :
   - contient l'ensemble des images et icônes du site
 - *CSV* :
