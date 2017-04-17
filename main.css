@@ -351,6 +351,18 @@ section.viewMap button:active {
     text-align: center;
 }
 
+.download:link, .download:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.download:active, .download:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
 #copyright p {
     font-size: 2vmin;
     font-style: italic;
