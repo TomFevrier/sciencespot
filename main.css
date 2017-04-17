@@ -106,7 +106,7 @@ header p {
 
 .coutDeLaVie .range-handle {
 	background-color: #FBB917;
-	background: url('https://tomfevrier.github.io/sciencespot/media/coutDeLaVie.png');
+	background: url('../media/coutDeLaVie.png');
 	background-size: 30px;
 }
 
@@ -116,7 +116,7 @@ header p {
 
 .transport .range-handle {
 	background-color: #3090c7;
-	background: url('https://tomfevrier.github.io/sciencespot/media/transport.png');
+	background: url('../media/transport.png');
 	background-size: 30px;
 }
 
@@ -126,7 +126,7 @@ header p {
 
 .cadreDeVie .range-handle {
 	background-color: #4AA02C;
-	background: url('https://tomfevrier.github.io/sciencespot/media/cadreDeVie.png');
+	background: url('../media/cadreDeVie.png');
 	background-size: 30px;
 }
 
@@ -136,7 +136,7 @@ header p {
 
 .sorties .range-handle {
 	background-color: #990012;
-	background: url('https://tomfevrier.github.io/sciencespot/media/sorties.png');
+	background: url('../media/sorties.png');
 	background-size: 30px;
 }
 
@@ -146,7 +146,7 @@ header p {
 
 .culture .range-handle {
 	background-color: #842DCE;
-	background: url('https://tomfevrier.github.io/sciencespot/media/culture.png');
+	background: url('../media/culture.png');
 	background-size: 30px;
 }
 
@@ -200,6 +200,13 @@ section.viewMap button:active {
 	margin: 0;
 }
 
+#index-sidebar {
+	font-size: 2.5vmin;
+    font-family: sans-serif;
+    font-weight: bold;
+	text-align: center;
+}
+
 #details {
 	display: inline-block;
 	text-align: center;
@@ -209,29 +216,29 @@ section.viewMap button:active {
 	color: #303030;
 	font-size: 2.1vmin;
 	text-align: left;
-	white-space: nowrap;
 }
 
-#linkCommentCaMarche {
-	margin-top: -3vh;
-	bottom: 5vh;
+#linkPlus {
+	margin-top: -5vh;
+	bottom: 7vh;
+    margin-bottom: 0;
 }
 
-#linkCommentCaMarche p {
+#linkPlus p {
 	color: #FB3D00;
 	text-align: center;
 }
 
-#linkCommentCaMarche a:link, #linkCommentCaMarche a:visited {
+#linkPlus a:link, #linkPlus a:visited {
 	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 2.2vmin;
+	font-size: 2.4vmin;
 	color: #FB3D00;
 	text-decoration: none;
 }
 
-#linkCommentCaMarche a:hover, #linkCommentCaMarche a:active {
+#linkPlus a:hover, #linkPlus a:active {
 	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 2.5vmin;
+	font-size: 2.7vmin;
 	color: #FB3D00;
 	text-decoration: none;
 	font-weight: bold;
@@ -245,6 +252,21 @@ section.viewMap button:active {
 	height: 100%;
 }
 
+#legend {
+    color: #FB3D00;
+    font-family: 'Work Sans', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 3vmin;
+    width: 8vmin;
+}
+
+#legend p {
+    font-size: 5vmin;
+    margin-top: -1.5vmin;
+    margin-bottom: -0.5vmin;
+}
+
 #infobox h2 {
 	color: #303030;
     font-size: 2.2vmin;
@@ -253,7 +275,7 @@ section.viewMap button:active {
 	text-align: center;
 }
 
-#index p {
+#index {
 	font-size: 2.5vmin;
     font-family: sans-serif;
     font-weight: bold;
@@ -283,37 +305,50 @@ section.viewMap button:active {
 	height: 100vh;
 	background-color: #FB3D00;
 	margin-bottom: 0;
-	display: flex;
-	flex-direction: column;
 }
 
 #columns {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
+	width: 100%;
+    float: left;
 }
 
 #details-index {
-	font-size: 1.6vmin;
+	font-size: 1.5vmin;
 	text-align: center;
-	width: 30vw;
+    width: 33%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 #details-index h2 {
 	font-size: 3.5vmin;
-	margin-bottom: 1vh;
+	margin-bottom: 1vmin;
 }
 
-#commentCaMarche {
-	font-size: 2vmin;
-	text-align: center;
-	width: 30vw;
+.details-domain img {
+    text-align: center;
 }
 
-#commentCaMarche h2 {
+#aPropos {
+    width: 33%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+
+#aPropos h2 {
 	font-size: 3.5vmin;
-	margin-bottom: 1vh;
+	margin-bottom: 8vmin;
+    text-align: center;
+}
+
+#aPropos p {
+    width: 90%;
+    margin: 3vmin auto 3vmin;
+    font-size: 2vmin;
+    text-align: justify;
 }
 
 #copyright p {
@@ -321,26 +356,32 @@ section.viewMap button:active {
 	font-style: italic;
 	margin-top: 4vmin;
 	font-weight: bold;
+    text-align: center;
 }
 
 #sources {
-	font-size: 1.4vmin;
+	font-size: 1.6vmin;
 	text-align: center;
-	width: 30vw;
+    width: 33%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 #sources h2 {
-	font-size: 3.5vh;
-	margin-bottom: 1vh;
+	font-size: 3.5vmin;
+	margin-bottom: 1vmin;
 }
 
-#sources img {
+.sources-domain img {
 	margin-top: 0;
 	margin-bottom: 0;
+    text-align: center;
 }
 
 .source p {
-	margin: 0;
+    margin: 0;
 }
 
 .source:link, .source:visited {
