@@ -348,7 +348,7 @@ section.viewMap button:active {
     width: 90%;
     margin: 3vmin auto 3vmin;
     font-size: 2vmin;
-    text-align: justify;
+    text-align: center;
 }
 
 #copyright p {
