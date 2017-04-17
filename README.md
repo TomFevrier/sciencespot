@@ -24,9 +24,10 @@
   - contient l'ensemble des images et icônes du site
 - *CSV* :
   - contient les fichiers CSV correspondant à chaque critère
-- libraries :
+- *libraries* :
   - contient les plugins JavaScript *powerange.js* et *smooth-scroll.js*, ainsi que la feuille de style *powerange.css*
-- algorithms :
+- *algorithms* :
   - contient les algorithmes utilisés pour l'acquisiton de certaines données
   - ceux-ci sont fournis à titre d'information : ils ne sont pas utilisés par le site, et la syntaxe n'a pas été simplifiée
-
+- *downloads* :
+  - contient les fichiers téléchargeables sur le site : *Données.xlsx* et *Paper final.pdf*
